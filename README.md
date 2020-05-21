@@ -70,7 +70,16 @@ Don't save this for the last minute! There are a few dependencies that will give
 cd otp_27may
 ```
 
-- Set the origin *replace your-github-account*:
+- Verify your remote: 
+
+```
+$ git remote -v
+> origin  https://github.com/your-user/otp_27may.git (fetch)
+> origin  https://github.com/your-user/otp_27may.git (push)
+```
+
+
+- If there's no origin, set it. Make sure you *replace your-github-account*:
 
 ```
 otp_27may> git remote add origin https://github.com/your-github-account/otp_27may.git
