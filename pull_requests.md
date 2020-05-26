@@ -3,5 +3,5 @@
 Bruce Tate
 Joaquin Alcerro
 Matt Willy
-
+Ken Harris
 Wanjiku Macharia
