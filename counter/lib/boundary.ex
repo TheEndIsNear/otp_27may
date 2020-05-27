@@ -4,6 +4,8 @@ defmodule Counter.Boundary do
   # Callbacks
 
   def init(initial_count) do
+    IO.inspect "Initializing..."
+    IO.inspect "Initial count: #{initial_count}"
     {:ok, initial_count}
   end
 
@@ -17,8 +19,11 @@ defmodule Counter.Boundary do
 
   # API
 
-  def start_link(initial_value) do
-    GenServer.start_link(__MODULE__, initial_value, name: :counter)
+  def start_link({name, initial_value}) do
+    IO.inspect "Starting with name: #{name}"
+    IO.inspect "Initial value: #{initial_value}"
+    
+    GenServer.start_link(__MODULE__, initial_value, name: name)
   end
 
   def inc(counter) do
@@ -27,5 +32,13 @@ defmodule Counter.Boundary do
 
   def get_count(counter) do
     GenServer.call(counter, :get_count)
+  end
+  
+  def child_spec(count: count, name: name) do
+    %{
+      id: name, 
+      start: {Counter.Boundary, :start_link, [{name, count}]}, 
+      name: name
+    }
   end
 end
