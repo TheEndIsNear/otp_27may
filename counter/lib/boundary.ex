@@ -14,4 +14,18 @@ defmodule Counter.Boundary do
   def handle_cast(:inc, count) do
     {:noreply, Counter.Core.inc(count)}
   end
+
+  # API
+
+  def start_link(initial_value) do
+    GenServer.start_link(__MODULE__, initial_value, name: :counter)
+  end
+
+  def inc(counter) do
+    GenServer.cast(counter, :inc)
+  end
+
+  def get_count(counter) do
+    GenServer.call(counter, :get_count)
+  end
 end
