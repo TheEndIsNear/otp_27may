@@ -6,11 +6,11 @@ defmodule Counter.Application do
     
     children = [
       {Counter.Boundary, count: 42, name: :c1}, 
-      {Counter.Boundary, count: 42, name: :c2}, 
-      {Counter.Boundary, count: 42, name: :c3}
+      {Counter.Boundary, count: 43, name: :c2}, 
+      {Counter.Boundary, count: 44, name: :c3}
     ]
 
-    opts = [strategy: :one_for_one, name: Counter.Supervisor]
+    opts = [strategy: :rest_for_one, name: Counter.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

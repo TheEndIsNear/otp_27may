@@ -11,5 +11,9 @@ alias Counter.Boundary
   def get_count(counter) do
     Boundary.get_count(counter)
   end
+  
+  def kill(counter) do
+    Boundary.kill(counter)
+  end
 
 end
