@@ -47,4 +47,15 @@ defmodule Tada.Content do
     It asked a crumb of me.
     """
   end
+
+  def passage(:ken) do
+    """
+    It's the same things your whole life. Clean up your room., 
+    Stand up straight., Pick up your feet., Take it like a man., 
+    Be nice to your sister., Don't mix beer and wine, ever.. 
+    Oh yeah, Don't drive on the railroad track.
+
+    -- from "Ground Hog Day"
+    """
+  end
 end
