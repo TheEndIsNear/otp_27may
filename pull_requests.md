@@ -17,7 +17,17 @@ Joaquin Alcerro
 <Text to memorize goes here>
 
 Matt Willy
-<Text to memorize goes here>
+Well, my lord,
+Since you have promised not to take my life,
+ I will, without reserve, declare the truth.
+
+He draws the arrow from his belt, and fixes his eyes
+sternly upon the governor.
+
+If that my hand had struck my darling child,
+This second arrow I had aimed at you,
+And, be assured, I should not then have missed.
+
 
 Ken Harris
 <Text to memorize goes here>
