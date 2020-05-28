@@ -19,6 +19,18 @@ defmodule PassageTest do
     assert actual == expected
   end
 
+  test "newlines should remain constant" do
+    passage = passage(:newline)
+    actual = Passage.erase(passage)
+
+    expected = %Passage{
+      text_state: "1_3\n56",
+      plan: [[5, 6]]
+    }
+
+    assert actual == expected
+  end
+
   def passage(:short) do
     Passage.new("I am happy", 2)
   end
@@ -27,6 +39,13 @@ defmodule PassageTest do
     %Passage{
       text_state: "12345",
       plan: [[1, 3]]
+    }
+  end
+
+  def passage(:newline) do
+    %Passage{
+      text_state: "123\n56",
+      plan: [[2, 4], [5, 6]]
     }
   end
 end

@@ -29,6 +29,8 @@ defmodule Tada.Passage do
     |> Enum.join()
   end
 
+  defp maybe_replace({"\n", _}, _), do: "\n"
+
   defp maybe_replace({char, index}, indexes) do
     if index in indexes do
       "_"
