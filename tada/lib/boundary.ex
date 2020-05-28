@@ -3,6 +3,18 @@ defmodule Tada.Boundary do
 
   alias Tada.Passage
 
+  # API
+
+  def start_link(text, steps) do
+    GenServer.start_link(__MODULE__, {text, steps})
+  end
+
+  def erase(server) do
+    server
+    |> GenServer.call(:erase)
+    |> inform()
+  end
+
   # callbacks
 
   def init({text, step}) do
@@ -27,5 +39,11 @@ defmodule Tada.Boundary do
     "\n"
     |> List.duplicate(40)
     |> IO.puts()
+  end
+
+  defp inform(text) do
+    scroll()
+    IO.puts("")
+    IO.puts(text)
   end
 end
