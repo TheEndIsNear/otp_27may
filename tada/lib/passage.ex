@@ -1,4 +1,5 @@
 defmodule Tada.Passage do
+  @ignore ["\n", " ", ".", ","]
   defstruct [:text_state, :plan]
 
   def new(text, steps) do
@@ -29,7 +30,7 @@ defmodule Tada.Passage do
     |> Enum.join()
   end
 
-  defp maybe_replace({"\n", _}, _), do: "\n"
+  defp maybe_replace({char, _}, _) when char in @ignore, do: char 
 
   defp maybe_replace({char, index}, indexes) do
     if index in indexes do
