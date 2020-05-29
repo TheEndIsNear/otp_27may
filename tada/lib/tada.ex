@@ -3,16 +3,11 @@ defmodule Tada do
   Documentation for `Tada`.
   """
 
-  @doc """
-  Hello world.
+  def memorize(text, steps) do
+    Tada.Boundary.start_link(text, steps)
+  end
 
-  ## Examples
-
-      iex> Tada.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def erase(server) do
+    Tada.Boundary.erase(server)
   end
 end
