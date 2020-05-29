@@ -3,9 +3,16 @@ defmodule Tada do
   Documentation for `Tada`.
   """
 
-  def memorize(text, steps) do
-    Tada.Boundary.start_link(text, steps)
+  def add_memorizer(name, steps \\ 5) do
+    add_memorizer(name, Tada.Content.passage(name), steps)
   end
+  
+  def add_memorizer(name, text, steps) do
+    DynamicSupervisor.start_child(
+      Tada.DynamicSupervisor, 
+      Tada.Boundary.child_spec({name, text, steps})
+    )
+  end  
 
   def erase(server) do
     Tada.Boundary.erase(server)

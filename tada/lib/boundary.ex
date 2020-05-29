@@ -5,8 +5,8 @@ defmodule Tada.Boundary do
 
   # API
 
-  def start_link(text, steps) do
-    GenServer.start_link(__MODULE__, {text, steps})
+  def start_link({name, text, steps}) do
+    GenServer.start_link(__MODULE__, {text, steps}, name: name)
   end
 
   def erase(server) do
@@ -45,5 +45,12 @@ defmodule Tada.Boundary do
     scroll()
     IO.puts("")
     IO.puts(text)
+  end
+  
+  def child_spec({name, text, steps}) do
+    %{       
+      id: name,
+      start: {Tada.Boundary, :start_link, [{name, text, steps}]}
+    }
   end
 end
