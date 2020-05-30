@@ -1,4 +1,8 @@
 defmodule Tada.Content do
+  @moduledoc """
+  This module contains different passages to be memorize
+  """
+  @spec passage(atom) :: String.t()
   def passage(:bruce) do
     """
     Tomorrow, tomorrow, and tomorrow

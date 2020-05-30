@@ -1,4 +1,7 @@
 defmodule Tada.Application do
+  @moduledoc """
+  Module containing the instructions for starting up the application.
+  """
   use Application
 
   def start(_type, _args) do
