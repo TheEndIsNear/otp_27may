@@ -37,6 +37,14 @@ defmodule Tada.Server do
   end
 
   @impl true
+  @spec handle_call(atom,  term(), Passage.t()) ::
+          {:reply, reply, new_state}
+          | {:reply, reply, new_state, timeout() | :hibernate | {:continue, term()}}
+          | {:noreply, new_state}
+          | {:noreply, new_state, timeout() | :hibernate | {:continue, term()}}
+          | {:stop, reason, reply, new_state}
+          | {:stop, reason, new_state}
+        when reply: term(), new_state: term(), reason: term()
   def handle_call(:erase, _from, passage) do
     passage = Passage.erase(passage)
     {:reply, passage.text_state, passage}
