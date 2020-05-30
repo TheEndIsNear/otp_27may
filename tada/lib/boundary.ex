@@ -46,9 +46,9 @@ defmodule Tada.Boundary do
     IO.puts("")
     IO.puts(text)
   end
-  
+
   def child_spec({name, text, steps}) do
-    %{       
+    %{
       id: name,
       start: {Tada.Boundary, :start_link, [{name, text, steps}]}
     }

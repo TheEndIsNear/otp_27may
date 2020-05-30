@@ -6,7 +6,7 @@ defmodule Tada.Content do
     To the last sylable of recorded time.
     And all our yesterdays have lighted fools, 
     the way to dusty death. Out, out, brief candle!
-    
+
     Life is but a walking shadow, a poor player 
     that struts and frets his way upon the stage, 
     and then is heard no more. 
@@ -15,7 +15,7 @@ defmodule Tada.Content do
     signifying nothing. 
     """
   end
-  
+
   def passage(:matt) do
     """
     Well, my lord,
@@ -30,7 +30,7 @@ defmodule Tada.Content do
     And, be assured, I should not then have missed.    
     """
   end
-  
+
   def passage(:wanjiku) do
     """
     Hope is the thing with feathers
