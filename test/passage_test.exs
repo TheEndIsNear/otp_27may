@@ -31,6 +31,18 @@ defmodule PassageTest do
     assert actual == expected
   end
 
+  test "when the plan is empty return the text" do
+    passage = passage(:final)
+    actual = Passage.erase(passage)
+
+    expected = %Passage{
+      text_state: "_____",
+      plan: []
+    }
+
+    assert actual == expected
+  end
+
   def passage(:short) do
     Passage.new("I am happy", 2)
   end
@@ -46,6 +58,13 @@ defmodule PassageTest do
     %Passage{
       text_state: "123\n56",
       plan: [[2, 4], [5, 6]]
+    }
+  end
+
+  def passage(:final) do
+    %Passage{
+      text_state: "_____",
+      plan: []
     }
   end
 end

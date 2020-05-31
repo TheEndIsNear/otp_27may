@@ -20,7 +20,7 @@ defmodule Tada.Passage do
   end
 
   @spec erase(t()) :: t()
-  def erase(%__MODULE__{ plan: []} = passage), do: passage
+  def erase(%__MODULE__{plan: []} = passage), do: passage
 
   def erase(%__MODULE__{text_state: text, plan: [head | tail]} = passage) do
     %__MODULE__{passage | text_state: remove_characters(text, head), plan: tail}

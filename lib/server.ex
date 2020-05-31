@@ -37,7 +37,7 @@ defmodule Tada.Server do
   end
 
   @impl true
-  @spec handle_call(atom,  term(), Passage.t()) ::
+  @spec handle_call(atom, term(), Passage.t()) ::
           {:reply, reply, new_state}
           | {:reply, reply, new_state, timeout() | :hibernate | {:continue, term()}}
           | {:noreply, new_state}
